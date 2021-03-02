@@ -1,0 +1,84 @@
+<ion-content fullscreen>
+  <div class="login-section">
+    <div class="heading ion-padding">
+      <h1>Login To Get Started</h1>
+    </div>
+    <form [formGroup]="loginForm" (submit)="onLogin()">
+      <div class="login-form ion-padding">
+        <div class="form-input">
+          <div class="icon"><ion-icon name="mail-outline"></ion-icon></div>
+          <ion-item>
+            <ion-label position="floating" inputmode="email">Email</ion-label>
+
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+        </div>
+
+        <div *ngFor="let error of errorMessages.email">
+          <ng-container
+            *ngIf="email.hasError(error.type) && (email.dirty || email.touched)"
+          >
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
+
+        <div class="form-input">
+          <div class="icon">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+          </div>
+          <ion-item>
+            <ion-label position="floating" inputmode="text">Password</ion-label>
+
+            <ion-icon
+              [name]="passwordToggle"
+              class="eye-icon"
+              (click)="togglePassword()"
+            ></ion-icon>
+
+            <ion-input
+              [type]="showPassword ? 'text' : 'password'"
+              formControlName="password"
+              maxlength="31"
+              id="password"
+            ></ion-input>
+          </ion-item>
+        </div>
+
+        <div *ngFor="let error of errorMessages.password">
+          <ng-container
+            *ngIf="password.hasError(error.type) && (password.dirty || password.touched)"
+          >
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
+
+        <div class="rememberMe-forgotPassword">
+          <div class="remeber-me">
+            <ion-checkbox color="primary"></ion-checkbox>
+            <a>Remeber Me</a>
+          </div>
+          <p [routerLink]="['/forget-password']" class="forgot-para">
+            Forgot Password?
+          </p>
+        </div>
+      </div>
+      <div></div>
+      <div class="action-buttons ion-padding">
+        <ion-button
+          class="login-button"
+          type="submit"
+          [disabled]="!loginForm.valid"
+          >Log in</ion-button
+        >
+
+        <ion-button
+          class="signup-button"
+          size="medium"
+          fill="outline"
+          [routerLink]="['/signup']"
+          >Sign up</ion-button
+        >
+      </div>
+    </form>
+  </div>
+</ion-content>

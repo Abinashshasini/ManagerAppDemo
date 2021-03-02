@@ -1,0 +1,107 @@
+ion-content {
+  --background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)),
+    url("../../../assets/images/image.jfif") no-repeat center center / cover;
+}
+.login-section {
+  height: 75vh;
+  margin-top: 25vh;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #fff;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border-top-left-radius: 46px;
+  border-top-right-radius: 46px;
+  color: black;
+  overflow-y: scroll;
+  .heading {
+    margin-top: 20px;
+    h1 {
+      font-size: 1.6rem;
+      font-weight: bolder;
+      color: black;
+      text-align: center;
+      margin: 0;
+    }
+    p {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: #7b7b7b;
+    }
+  }
+  .login-form {
+    .form-input {
+      position: relative;
+      ion-item::part(native) {
+        padding-left: 0;
+        color: whitesmoke;
+        background-color: white;
+      }
+      padding: 5px;
+      .icon {
+        position: absolute;
+        top: 20px;
+        z-index: 2;
+        font-size: 1.2rem;
+        left: 5px;
+        color: black;
+      }
+      ion-label {
+        position: absolute;
+        margin-left: 35px;
+        font-weight: bolder;
+        font-size: 0.8rem;
+        top: 3px;
+        color: black;
+      }
+      ion-input {
+        font-size: 0.9rem;
+        --padding-start: 36px;
+        --padding-top: 20px;
+        color: black;
+      }
+      .eye-icon {
+        position: absolute;
+        top: 16px;
+        z-index: 2;
+        font-size: 1.2rem;
+        right: 5px;
+        color: black;
+      }
+    }
+  }
+  .action-buttons {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .signup-button {
+      --background: #f9b801;
+      width: 100%;
+      font-weight: bold;
+    }
+
+    .login-button {
+      --border-color: #b4b4b4;
+      -color: #000000;
+      font-weight: bold;
+      margin-top: 5px;
+      width: 100%;
+    }
+  }
+}
+.login-section::-webkit-scrollbar {
+  display: none;
+}
+p {
+  margin: 0;
+  margin-right: 20px;
+  font-size: 0.9rem;
+  color: #c2170b;
+  text-decoration: underline;
+  display: flex;
+  justify-content: flex-end;
+}
